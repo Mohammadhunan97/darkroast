@@ -62,3 +62,11 @@ post_id
 tagname
 }
 ```
+
+
+### Barstool User Auth:
+* App creates credentials with <aws>/barstool/ with {appname}, {aws database url}, and {password}, returns credentials token
+* User pings <aws>/barstool/users/create?credentials={somecredentials} with {username} {password} to create a new entry in their database
+* User pings <aws>/barstool/users/login?credentials={somecredentials} with {username} {passwprd}, returns true or false if credentials are correct
+
+Eventually this code will be imported directly from barstool, although the API will remain the same externally. The code internally will be significantly less verbose.
